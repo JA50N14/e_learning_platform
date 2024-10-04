@@ -192,6 +192,7 @@ REST_FRAMEWORK = {
     ]
 }
 
+#Added to environment variables in Render Web Service
 USERNAME = config('USERNAME')
 PASSWORD = config('PASSWORD')
 
