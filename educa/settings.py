@@ -168,10 +168,12 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # }
 
 #settings for Redis
+REDIS_URL = os.getenv('REDIS_URL', 'redis://127.0.0.1:6379')
+
 CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.redis.RedisCache',
-        'LOCATION': 'redis://127.0.0.1:6379',
+        'LOCATION': REDIS_URL,
     }
 }
 
@@ -200,7 +202,7 @@ CHANNEL_LAYERS = {
     'default': {
         'BACKEND': 'channels_redis.core.RedisChannelLayer',
         'CONFIG': {
-            'hosts': [('127.0.0.1', 6379)],
+            'hosts': [REDIS_URL],
         },
     },
 }
