@@ -1,20 +1,20 @@
 databases:
-  - name: mysitedb
+  - name: e-learning-platform-db
     plan: free
-    databaseName: mysite
-    user: mysite
+    databaseName: e-learning-platform-db
+    user: e_learning_platform_db_user
 
 services:
   - type: web
     plan: free
-    name: mysite
+    name: e_learning_platform
     runtime: python
     buildCommand: "./build.sh"
     startCommand: "python -m gunicorn e_learning_platform.asgi:application -k uvicorn.workers.UvicornWorker"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: mysitedb
+          name: e-learning-platform-db
           property: connectionString
       - key: SECRET_KEY
         generateValue: true
