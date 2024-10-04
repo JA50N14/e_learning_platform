@@ -1,7 +1,7 @@
 databases:
   - name: e-learning-platform-db
     plan: free
-    databaseName: e-learning-platform-db
+    databaseName:
     user: e_learning_platform_db_user
 
 services:
