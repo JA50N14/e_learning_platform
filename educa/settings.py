@@ -208,5 +208,5 @@ CHANNEL_LAYERS = {
 }
 
 CSRF_TRUSTED_ORIGINS = [
-    'www.educa-of2y.onrender.com', 'educa-of2y.onrender.com'
+    'https://www.educa-of2y.onrender.com'
 ]
