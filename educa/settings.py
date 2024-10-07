@@ -32,7 +32,7 @@ SECRET_KEY = 'django-insecure-8y$)6s)ld=*48m012jw_qzw#&cb!xu@)+^u=!d(51c1&#t23av
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['educa-of2y.onrender.com', 'www.educa-of2y.onrender.com', '*educa-of2y.onrender.com*']
+ALLOWED_HOSTS = ['educa-of2y.onrender.com', 'www.educa-of2y.onrender.com', '*educa-of2y.onrender.com*', '127.0.0.1']
 
 
 # Application definition
