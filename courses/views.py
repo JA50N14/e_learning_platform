@@ -6,7 +6,7 @@ from .models import Course, Module, Content, Subject
 from django.contrib.auth.mixins import (LoginRequiredMixin, PermissionRequiredMixin)
 from django.shortcuts import get_object_or_404, redirect
 from django.views.generic.base import TemplateResponseMixin, View
-from .forms import ModuleFormSet
+from .forms import ModuleFormSet, RegistrationForm
 from django.apps import apps
 from django.forms.models import modelform_factory
 from braces.views import CsrfExemptMixin, JsonRequestResponseMixin
@@ -14,6 +14,7 @@ from django.db.models import Count
 from django.views.generic.detail import DetailView
 from students.forms import CourseEnrollForm
 from django.core.cache import cache
+from django.contrib.auth.forms import *
 
 
 # Create your views here.
@@ -181,6 +182,17 @@ class CourseDetailView(DetailView):
         context['enroll_form'] = CourseEnrollForm(initial={'course': self.object})
         return context
 
+
+def register(request):
+    if request.method == 'POST':
+        form = RegistrationForm(request.post)
+        if form.is_valid():
+            form.save()
+            return redirect('login')
+    else:
+        form = RegistrationForm()
+        return render(request, 'register.html', {'form': form})
+            
 
 
 
