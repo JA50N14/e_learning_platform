@@ -13,5 +13,5 @@ python manage.py migrate
 
 if [[ $CREATE_SUPERUSER ]];
 then
-    e_learning_platform/manage.py createsuperuser --no-input
+    manage.py createsuperuser --no-input
 fi
