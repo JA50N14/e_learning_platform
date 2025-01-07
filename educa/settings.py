@@ -96,19 +96,19 @@ WSGI_APPLICATION = 'educa.wsgi.application'
 
 
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 DATABASES = {
-    'default': dj_database_url.config(
-        default = 'postgresql://e_learning_platform_db_user:evM1SP13beOYx7VqxZRjKdQ6nNvqLZ7x@dpg-crvi2m88fa8c73ekaf4g-a/e_learning_platform_db',
-        conn_max_age=600
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
+
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         default = 'postgresql://e_learning_platform_db_user:evM1SP13beOYx7VqxZRjKdQ6nNvqLZ7x@dpg-crvi2m88fa8c73ekaf4g-a/e_learning_platform_db',
+#         conn_max_age=600
+#     )
+# }
 
 
 # Password validation
